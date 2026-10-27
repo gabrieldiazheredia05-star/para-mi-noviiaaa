@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        
+        
+        <title>Para Vos 🥺❤️</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+    <h1>this site is dedicated to my girlfriend, who holds my heart.</h1>
+    <p> thank you for every moment by your side and for making my life so much happier. i love you with all my heart </p>
+    <img src="111.jpg" alt="Nosotros dos"width="250">
+<div class="contenedor-corazones">
+    <div class="corazon">❤️</div>
+    <div class="corazon">💖</div>
+    <div class="corazon">💕</div>
+    <div class="corazon">❤️</div>
+    <div class="corazon">💗</div>
+</div>
+<p>te amo mucho miamor xos mi vidaa KSJKSJSKJ quedo un poco pelado igual me diverti muxo haciendote la pagina :3</p>
+<!-- Botón principal -->
+<button class="mi-boton" id="btnAbrir">abrir mensaje 💌</button>
+
+<!-- Ventana emergente (oculta por defecto) -->
+<div class="modal-overlay" id="miModal">
+    <div class="modal-contenido">
+        <span class="cerrar" id="btnCerrar">&times;</span>
+        <p class="texto-mensaje">
+            TE ADORO MI AMORR MUAK
+        </p>
+    </div>
+</div>
+
+<script>
+    const modal = document.getElementById("miModal");
+    const btnAbrir = document.getElementById("btnAbrir");
+    const btnCerrar = document.getElementById("btnCerrar");
+
+    // Abrir al hacer clic en el botón
+    btnAbrir.onclick = function() {
+        modal.style.display = "flex";
+    }
+
+    // Cerrar al hacer clic en la X
+    btnCerrar.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Cerrar si hace clic fuera de la tarjeta
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+
+p {
+    color:  rgb(80, 22, 80);
+    font-family: 'Sacramento', cursive;
+    border: 1px solid rgba(80, 22, 80, 0.3);
+    
+    
+}
+h1 {
+    color:  rgb( 80, 22, 80);
+    font-family: 'Sacramento', cursive;
+    border: 1px solid rgba(80, 22, 80, 0.3);
+    
+}
+body {
+    background: linear-gradient(135deg, #ffe6eb 0%, #def3f8 100%);
+    min-height: 100vh;
+    overflow-x: hidden; /* Evita barras de desplazamiento indebidas */
+    position: relative;
+}
+
+/* Contenedor que cubre toda la pantalla por detrás */
+.contenedor-corazones {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permite hacer clic en la tarjeta sin que los corazones estorben */
+    z-index: -1; /* Mantiene los corazones DETRÁS de tu texto y tarjetas */
+}
+
+/* Estilo individual de los corazones */
+.corazon {
+    position: absolute;
+    bottom: -50px;
+    font-size: 24px;
+    opacity: 0.6;
+    animation: flotar 6s linear infinite;
+}
+
+/* Variamos las posiciones horizontales y tiempos para que suban intercalados */
+.corazon:nth-child(1) { left: 10%; animation-duration: 7s; animation-delay: 0s; }
+.corazon:nth-child(2) { left: 30%; animation-duration: 9s; animation-delay: 2s; font-size: 18px; }
+.corazon:nth-child(3) { left: 55%; animation-duration: 6s; animation-delay: 1s; }
+.corazon:nth-child(4) { left: 75%; animation-duration: 8s; animation-delay: 3s; font-size: 30px; }
+.corazon:nth-child(5) { left: 90%; animation-duration: 7s; animation-delay: 4s; }
+
+/* Animación que hace subir y desvanecer los corazones */
+@keyframes flotar {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-105vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+/* Botón principal */
+.mi-boton {
+    background-color: rgba(255, 255, 255, 0.4);
+    color: rgb(80, 22, 80);
+    font-family: 'Sacramento', cursive;
+    font-size: 26px;
+    padding: 12px 28px;
+    border: 1px solid rgba(80, 22, 80, 0.2);
+    border-radius: 25px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.mi-boton:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Fondo oscuro translúcido para enfocar la ventana */
+.modal-overlay {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Tarjeta del mensaje */
+.modal-contenido {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    max-width: 400px;
+    width: 85%;
+    text-align: center;
+    position: relative;
+}
+
+/* Botón 'X' para cerrar */
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    font-size: 24px;
+    color: rgb(80, 22, 80);
+    cursor: pointer;
+}
+
+.texto-mensaje {
+    font-family: 'Sacramento', cursive;
+    color: rgb(80, 22, 80);
+    font-size: 28px;
+    line-height: 1.4;
+    margin-top: 10px;
+}
